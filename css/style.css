@@ -43,7 +43,7 @@ html,body{height: 100%;} /*ajusta responsividade da altura*/
     margin: 0 20px;
 }
 
-.sidebar__menu a.sidebar__menu__selecionado{
+.sidebar__menu a.sidebar__menu__selecionado:hover{
     color: white;
     background-color: rgb(80, 80, 80);
     border-radius: 5px;
@@ -78,3 +78,18 @@ html,body{height: 100%;} /*ajusta responsividade da altura*/
     padding: 0 10px;
 }
 
+.sidebar__playlists{
+    padding: 20px 0;
+    border-top: 1px solid rgb(40,40,40);
+}
+
+.sidebar__playlists a{
+    margin: 10px o;
+    display: block;
+    color: rgb(190, 190, 190);
+    text-decoration: none;
+}
+
+.sidebar__playlists a:hover{
+    color: white;
+}
