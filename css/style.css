@@ -93,3 +93,67 @@ html,body{height: 100%;} /*ajusta responsividade da altura*/
 .sidebar__playlists a:hover{
     color: white;
 }
+
+/*main*/
+.main{
+    width: calc(100% - 250px);
+    background-color: rgb(30, 30, 30);
+    height: 100%;
+
+    float: left;
+    padding: 15px 50px;
+    overflow-y: auto;
+}
+
+.main__row{
+    display: flex;
+    flex-wrap: wrap; /*manipulação livre*/
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.main-wraper {
+    padding-bottom: 200px;
+}
+
+.main__row__titles {
+    width: 100%;
+}
+
+.main__row__titles h2{
+    color: white;
+}
+
+.main__col {
+    cursor: pointer;
+    width: 10%;
+    margin-right: 1%;
+    margin-top: 20px;
+
+    background-color: #282828;
+    border-radius: 8px;
+
+    padding: 10px;
+    
+    text-align: center;
+}
+
+.main__col h3{
+    color: white;
+    margin: 8px 0;
+}
+
+.main__col p{
+    color:rgb(100, 100, 100);
+    margin: 8px 0;
+    font-size: 13px;
+    text-align: left;
+}
+
+.main__col img{
+    display: block;
+    margin: 8px auto 0 auto;
+    width: 90px;
+    height: 90px;
+}
