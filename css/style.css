@@ -215,7 +215,7 @@ html,body{height: 100%;} /*ajusta responsividade da altura*/
     background: rgb(130, 130, 130);
 }
 
-.player__control__progress2 {
+#player__control__progress2 {
     position: relative;
     left: 0;
     top: 0;
@@ -225,14 +225,14 @@ html,body{height: 100%;} /*ajusta responsividade da altura*/
     background-color: white;
 }
 
-/*responsividade
+/*responsividade*/
 @media screen and (max-width: 1700px) {
     .main__col{
         width: 20%;
     }
 }
 
-@media screen and (max-width: 768px) { /*mobile
+@media screen and (max-width: 768px) { /*mobile*/
     .main{width:100%;}
     .sidebar{
         display: none;
@@ -241,5 +241,5 @@ html,body{height: 100%;} /*ajusta responsividade da altura*/
         width: 48%;
         margin-right: 2%;
     }
-} */
+} 
 

@@ -64,55 +64,55 @@
                 <div  class="main__row__titles"><h2>Paradas</h2></div>
 
                 <div class="main__col">
-                    <img src="img/lista.png"/>
+                    <img src="img/topHit1.png"/>
                     <h3>As 50 mais tocadas</h3>
                     <p>Descrição da playlist ...</p>
                 </div>
 
                 <div class="main__col">
-                    <img src="img/lista.png"/>
+                    <img src="img/topHit2.png"/>
                     <h3>As 50 mais tocadas</h3>
                     <p>Descrição da playlist ...</p>
                 </div>
 
                 <div class="main__col">
-                    <img src="img/lista.png"/>
+                    <img src="img/topHit1.png"/>
                     <h3>As 50 mais tocadas</h3>
                     <p>Descrição da playlist ...</p>
                 </div>
 
                 <div class="main__col">
-                    <img src="img/lista.png"/>
+                    <img src="img/topHit2.png"/>
                     <h3>As 50 mais tocadas</h3>
                     <p>Descrição da playlist ...</p>
                 </div>
 
                 <div class="main__col">
-                    <img src="img/lista.png"/>
+                    <img src="img/topHit1.png"/>
                     <h3>As 50 mais tocadas</h3>
                     <p>Descrição da playlist ...</p>
                 </div>
 
                 <div class="main__col">
-                    <img src="img/lista.png"/>
+                    <img src="img/topHit2.png"/>
                     <h3>As 50 mais tocadas</h3>
                     <p>Descrição da playlist ...</p>
                 </div>
 
                 <div class="main__col">
-                    <img src="img/lista.png"/>
+                    <img src="img/topHit1.png"/>
                     <h3>As 50 mais tocadas</h3>
                     <p>Descrição da playlist ...</p>
                 </div>
 
                 <div class="main__col">
-                    <img src="img/lista.png"/>
+                    <img src="img/topHit2.png"/>
                     <h3>As 50 mais tocadas</h3>
                     <p>Descrição da playlist ...</p>
                 </div>
 
                 <div class="main__col">
-                    <img src="img/lista.png"/>
+                    <img src="img/topHit1.png"/>
                     <h3>As 50 mais tocadas</h3>
                     <p>Descrição da playlist ...</p>
                 </div>
@@ -154,13 +154,15 @@
             </div>
 
             <div class="player__control__progress">
-                <div style="width: 0;" class="player__control__progress2"></div>
+                <div id="player__control__progress2"></div>
             </div>
 
         </div>
     </div>
     
-    <audio id="audioplayer" style="position: absolute; left: 0; top:0; z-index: -999; opacity: 0;" controls=""></audio>
+    <audio id="audioplayer" preload="metadata" ontimeupdate="updateProgressBar(this.currentTime)" 
+        style="position: absolute; left: 0; top:0; z-index: -999; opacity: 0;" controls>
+    </audio>
 
     <script src="js/all.min.js"></script>
 
@@ -168,6 +170,7 @@
         
         var audioPlayer = document.getElementById("audioplayer");
         var loaded = false;
+        var duracaoTotal = 0;
 
         var playBtn = document.getElementById('playBtn');
         var pauseBtn = document.getElementById('pauseBtn');
@@ -197,12 +200,30 @@
                 <source src="`+file+`" type="audio/mp3" />`
                 loaded = true;
             }
-
+    
             audioplayer.play();
 
             playBtn.style.display = "none";
             pauseBtn.style.display = "inline";
 
+        }
+
+        audioplayer.onloadedmetadata = function() {
+            duracaoTotal = audioplayer.duration;
+        }
+
+        function updateProgressBar (currentTime) {
+            let progress = 0;
+            let duracaoAtual = 0;
+            let element = document.getElementById("player__control__progress2");
+
+            for(let i=0; i<duracaoTotal; i++) {
+
+                duracaoAtual = currentTime;
+                
+                element.style.width = (duracaoAtual / duracaoTotal) * 100 + '%';
+
+            }
         }
 
         document.querySelectorAll('.main__col').forEach(item => {
