@@ -169,6 +169,10 @@ html,body{height: 100%;} /*ajusta responsividade da altura*/
     background-color: rgb(60, 60, 60);
 }
 
+.player__artist {
+    width: 20%;
+}
+
 .player__artist img {
     max-width: 70px;
     display: inline-block;
@@ -190,7 +194,7 @@ html,body{height: 100%;} /*ajusta responsividade da altura*/
 }
 
 .player__control {
-    width: 100%;
+    width: 70%;
     text-align: center;
 }
 
@@ -220,3 +224,22 @@ html,body{height: 100%;} /*ajusta responsividade da altura*/
     border-radius: 8px;
     background-color: white;
 }
+
+/*responsividade
+@media screen and (max-width: 1700px) {
+    .main__col{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 768px) { /*mobile
+    .main{width:100%;}
+    .sidebar{
+        display: none;
+    }
+    .main__col{
+        width: 48%;
+        margin-right: 2%;
+    }
+} */
+
